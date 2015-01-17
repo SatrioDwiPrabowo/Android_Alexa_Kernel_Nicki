@@ -177,6 +177,7 @@ $(obj)/ashldi3.S: $(srctree)/arch/$(SRCARCH)/lib/ashldi3.S
 # always have a GOT entry which is what we need.
 # The .data section is already discarded by the linker script so no need
 # to bother about it here.
+# This fixes for Alexa Kernel
 check_for_bad_syms = \
 bad_syms=$$($(CROSS_COMPILE)nm $@ | sed -n 's/^.\{8\} [bc] \(.*\)/\1/p') && \
 [ -z "$$bad_syms" ] || \
